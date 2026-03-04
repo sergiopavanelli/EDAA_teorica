@@ -1,6 +1,6 @@
 # 📚 EDAA — Estruturas de Dados e Análise de Algoritmos
 
-> **Repositório de Atividades referentes às aulas teóricas da disciplina Estrutura de Dados e Análise de Algoritmos (EDAA)**  
+> **Repositório de Atividades referentes às aulas teóricas da disciplina Estruturas de Dados e Análise de Algoritmos (EDAA)**  
 > Universidade: **UNIBH — Centro Universitário de Belo Horizonte**  
 > Semestre: **2026/1**  
 > Professor: **Ricardo Antonio Bicalho Ribeiro**  
