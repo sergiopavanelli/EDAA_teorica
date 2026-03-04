@@ -4,6 +4,7 @@
 ## Data: 04/03/2026
 
 ## Integrantes:
+### Líder: Sérgio Pinton Pavanelli (sergiopavanelli@gmail.com)
 
 - Sérgio Pinton Pavanelli - RA 123220202  
 - Samuel Zappala Batista - RA 12411504  
