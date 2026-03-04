@@ -1,4 +1,4 @@
-# 📚 EDAA — Estrutura de Dados e Análise de Algoritmos
+# 📚 EDAA — Estruturas de Dados e Análise de Algoritmos
 
 > **Repositório de Atividades Teóricas**
 > Universidade: **UNIBH — Centro Universitário de Belo Horizonte**
