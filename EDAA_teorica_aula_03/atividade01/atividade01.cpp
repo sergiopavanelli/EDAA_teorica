@@ -1,3 +1,6 @@
+// Atividade 1: Carteira de Motorista
+//Este código utiliza uma constante e um operador relacional para verificar se a idade permite tirar a carteira.
+
 #include <iostream>
 using namespace std;
 

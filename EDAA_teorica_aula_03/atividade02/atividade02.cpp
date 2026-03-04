@@ -1,3 +1,6 @@
+/*Atividade 2: Par ou Ímpar (0 ou 1)
+O programa lê um inteiro e imprime 0 se for par, e 1 se for ímpar.*/
+
 #include <iostream>
 using namespace std;
 
