@@ -65,11 +65,11 @@ EDAA_teorica/
 | Campo | Informação |
 |---|---|
 | 🏫 Instituição | UNIBH — Centro Universitário de Belo Horizonte |
-| 📘 Disciplina | Estrutura de Dados e Análise de Algoritmos (EDAA) |
+| 📘 Disciplina | Estruturas de Dados e Análise de Algoritmos (EDAA) |
 | 🗓️ Semestre | 2026/1 |
 | 👨‍🏫 Professor | Ricardo Antonio Bicalho Ribeiro |
 | 💻 Linguagem | C++ |
-| 🎓 Curso | Ciência da Computação / Sistemas de Informação / Engenharia de Software |
+| 🎓 Curso | Ciência da Computação |
 
 ---
 
