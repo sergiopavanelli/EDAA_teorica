@@ -1,4 +1,4 @@
-# UC: Estrutura de Dados e Análise de Algoritmos
+# UC: Estruturas de Dados e Análise de Algoritmos
 
 ## Título: Prática nº 01B – Atividade –  EDA_1B_Lista
 ## Data: 04/03/2026
@@ -15,8 +15,8 @@
 - Miguel Pedro Pinheiro - RA 12315515  
 - Geovana Dias de Almeida - RA 123221311  
 
-### Tema:   Programação de Soluções Computacionais 
-### Objetivo:  Introdução aos principais conceitos e motivação 
+### Tema: Programação de Soluções Computacionais 
+### Objetivo: Introdução aos principais conceitos e motivação 
 ### Roteiro: Formar grupos e desenvolver as atividades propostas. 
 
 ---
