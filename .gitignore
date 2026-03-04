@@ -7,3 +7,9 @@
 # Ignorar executaveis do Mac/Linux
 *.out
 *.o
+
+# Ignorar pasta de debug do Mac
+*.dSYM/
+
+# Ignorar o executavel gerado pelo Mac (que tem o mesmo nome da pasta)
+atividade01
