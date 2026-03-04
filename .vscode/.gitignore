@@ -1,0 +1,9 @@
+# Ignorar configuracoes locais do VS Code
+.vscode/
+
+# Ignorar executaveis do Windows
+*.exe
+
+# Ignorar executaveis do Mac/Linux
+*.out
+*.o
