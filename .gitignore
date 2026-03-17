@@ -22,3 +22,9 @@ atividade07
 atividade08
 atividade09
 atividade10
+
+# Arquivos de compilacao e debug do Windows (MSVC)
+*.exe
+*.obj
+*.ilk
+*.pdb
