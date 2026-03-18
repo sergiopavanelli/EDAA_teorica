@@ -1,7 +1,7 @@
 # UC: Estruturas de Dados e Análise de Algoritmos
 
 ## Título: Prática nº 01D – Atividade – EDA_1D - Lista
-## Data: 24/03/2026
+## Data: 18/03/2026
 
 ## Integrantes:
 
