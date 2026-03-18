@@ -1,7 +1,7 @@
 # 🎯 Simulado A2 (Objetiva): Leitura de Código e Pegadinhas Clássicas
 
-**Foco:** Preparação para a Avaliação A2 (Questões de Múltipla Escolha)
-**Objetivo:** Treinar o olhar para armadilhas comuns em testes de mesa, análise assintótica e comportamento de estruturas de dados.
+**Foco:** Preparação para a Avaliação A2 (Questões de Múltipla Escolha)  
+**Objetivo:** Treinar o olhar para armadilhas comuns em testes de mesa, análise assintótica e comportamento de estruturas de dados.  
 
 ---
 
