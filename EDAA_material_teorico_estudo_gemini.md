@@ -1,7 +1,8 @@
 # 📚 Guia Teórico Completo: Estruturas de Dados e Análise de Algoritmos
 
-**Carga Horária:** 160h | **Semestre:** 2026/1
-**Objetivo da Disciplina:** Capacitar o estudante a projetar, implementar e analisar o desempenho de estruturas de dados e algoritmos complexos, escolhendo a solução computacional mais eficiente para cada classe de problema.
+**Carga Horária:** 160h  
+**Semestre:** 2026/1  
+**Objetivo da Disciplina:** Capacitar o estudante a projetar, implementar e analisar o desempenho de estruturas de dados e algoritmos complexos, escolhendo a solução computacional mais eficiente para cada classe de problema.  
 
 ---
 
