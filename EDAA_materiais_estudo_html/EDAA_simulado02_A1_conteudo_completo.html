@@ -73,18 +73,18 @@
 <aside class="sidebar" id="sidebar">
     <div class="sidebar-header">
         <h1>&#128221; Simulado A1 — Parte 02<br>Cobertura Completa da Ementa</h1>
-        <input type="text" class="search-box" id="search-input" placeholder="&#128269; Buscar no conteudo..." oninput="handleSearch(this.value)">
+        <input type="text" class="search-box" id="search-input" placeholder="&#128269; Buscar no conteúdo..." oninput="handleSearch(this.value)">
         <div class="search-count" id="search-count"></div>
     </div>
     <div class="nav-container" id="nav-container">
         <div class="nav-group">
-            <div class="nav-group-title">Questoes Discursivas</div>
-            <a class="nav-item" href="#sec-1" onclick="navClick(this)"><span class="nav-icon">1&#65039;&#8419;</span> Sistemas e Logica</a>
-            <a class="nav-item" href="#sec-2" onclick="navClick(this)"><span class="nav-icon">2&#65039;&#8419;</span> Inducao e Recursao</a>
-            <a class="nav-item" href="#sec-3" onclick="navClick(this)"><span class="nav-icon">3&#65039;&#8419;</span> Analise Assintotica (Big-O)</a>
-            <a class="nav-item" href="#sec-4" onclick="navClick(this)"><span class="nav-icon">4&#65039;&#8419;</span> Ordenacao e Busca</a>
+            <div class="nav-group-title">Questões Discursivas</div>
+            <a class="nav-item" href="#sec-1" onclick="navClick(this)"><span class="nav-icon">1&#65039;&#8419;</span> Sistemas e Lógica</a>
+            <a class="nav-item" href="#sec-2" onclick="navClick(this)"><span class="nav-icon">2&#65039;&#8419;</span> Indução e Recursão</a>
+            <a class="nav-item" href="#sec-3" onclick="navClick(this)"><span class="nav-icon">3&#65039;&#8419;</span> Análise Assintótica (Big-O)</a>
+            <a class="nav-item" href="#sec-4" onclick="navClick(this)"><span class="nav-icon">4&#65039;&#8419;</span> Ordenação e Busca</a>
             <a class="nav-item" href="#sec-5" onclick="navClick(this)"><span class="nav-icon">5&#65039;&#8419;</span> Tabelas Hash</a>
-            <a class="nav-item" href="#sec-6" onclick="navClick(this)"><span class="nav-icon">6&#65039;&#8419;</span> Arvores Binarias vs Heaps</a>
+            <a class="nav-item" href="#sec-6" onclick="navClick(this)"><span class="nav-icon">6&#65039;&#8419;</span> Árvores Binárias vs Heaps</a>
             <a class="nav-item" href="#sec-7" onclick="navClick(this)"><span class="nav-icon">7&#65039;&#8419;</span> Estruturas em Grafos</a>
             <a class="nav-item" href="#sec-8" onclick="navClick(this)"><span class="nav-icon">8&#65039;&#8419;</span> Algoritmos em Grafos</a>
             <a class="nav-item" href="#sec-9" onclick="navClick(this)"><span class="nav-icon">9&#65039;&#8419;</span> Paradigmas de Projeto</a>
@@ -100,8 +100,8 @@
             <span class="badge badge-warn">Simulado A1</span>
             <span class="badge badge-green">Ementa Completa</span>
         </div>
-        <button class="home-btn" onclick="history.back()" title="Voltar a pagina anterior">&larr; Voltar</button>
-        <a class="home-btn" href="index.html" title="Voltar ao indice">&#127968; Inicio</a>
+        <button class="home-btn" onclick="history.back()" title="Voltar à página anterior">&larr; Voltar</button>
+        <a class="home-btn" href="index.html" title="Voltar ao índice">&#127968; Início</a>
         <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn">&#127769; Modo Noturno</button>
     </header>
     <div class="content-container">
@@ -111,126 +111,126 @@
 </main>
 <button class="scroll-top" id="scroll-top" onclick="scrollToTop()" title="Voltar ao topo">&uarr;</button>
 <script id="md-source" type="text/markdown">
-# &#128221; Simulado A1 (Discursiva) - Parte 02: Cobertura Completa da Ementa
+# 📝 Simulado A1 (Discursiva) - Parte 02: Cobertura Completa da Ementa
 
-Este simulado testa o dominio dos modulos avancados da disciplina: Matematica Computacional, Complexidade, Arvores, Grafos, Hash e Paradigmas de Algoritmos.
-
----
-
-## 1. Fundamentos Matematicos: Sistemas e Logica
-**Enunciado:** A computacao em baixo nivel exige o dominio de bases numericas e logica booleana.
-* **a)** Explique por que o sistema Hexadecimal e amplamente utilizado na computacao, mesmo o processador operando apenas em Binario.
-* **b)** Considere a operacao logica `XOR` (Ou Exclusivo) entre dois bits. Qual e a propriedade matematica que torna o `XOR` extremamente util para encontrar elementos unicos em um array sem usar espaco extra de memoria?
-
-**Proposta de Resolucao:**
-* **a)** O Hexadecimal (base 16) e usado por ser uma forma extremamente compacta e legivel de representar numeros binarios longos. Exatamente 4 bits (um *nibble*) correspondem a exatamente 1 digito hexadecimal (0-F). Isso facilita a vida dos programadores ao ler enderecos de memoria, cores e instrucoes de maquina, reduzindo erros de leitura.
-* **b)** A propriedade fundamental do `XOR` (`^`) e que um numero submetido ao `XOR` por ele mesmo resulta em zero ($A \oplus A = 0$), e um numero submetido ao `XOR` por zero resulta nele mesmo ($A \oplus 0 = A$). Alem disso, a ordem nao importa. Portanto, se fizermos o `XOR` de todos os elementos de um array onde todos os numeros aparecem em pares, exceto um, os pares se anularao (virando 0), e o resultado final da operacao sera exatamente o elemento unico que sobrou.
+Este simulado testa o domínio dos módulos avançados da disciplina: Matemática Computacional, Complexidade, Árvores, Grafos, Hash e Paradigmas de Algoritmos.
 
 ---
 
-### 2. Inducao Matematica e Recursao
-**Enunciado:** Existe uma ligacao direta entre a tecnica de Prova por Inducao Matematica e a construcao de Algoritmos Recursivos.
-* **a)** Quais sao os dois passos fundamentais de uma prova por inducao matematica?
-* **b)** Como esses dois passos se traduzem na estrutura obrigatoria de uma funcao recursiva?
+## 1. Fundamentos Matemáticos: Sistemas e Lógica
+**Enunciado:** A computação em baixo nível exige o domínio de bases numéricas e lógica booleana.
+* **a)** Explique por que o sistema Hexadecimal é amplamente utilizado na computação, mesmo o processador operando apenas em Binário.
+* **b)** Considere a operação lógica `XOR` (Ou Exclusivo) entre dois bits. Qual é a propriedade matemática que torna o `XOR` extremamente útil para encontrar elementos únicos em um array sem usar espaço extra de memória?
 
-**Proposta de Resolucao:**
-* **a)** Os dois passos sao: 1) **Caso Base:** Provar que a afirmacao e verdadeira para o primeiro elemento (geralmente $n = 0$ ou $n = 1$). 2) **Passo Indutivo:** Assumir que e verdadeira para um numero arbitrario $k$ (Hipotese de Inducao) e, com base nisso, provar que obrigatoriamente e verdadeira para $k + 1$.
-* **b)** Na programacao, isso se traduz perfeitamente: O "Caso Base" da inducao torna-se a **Condicao de Parada** da recursao (o momento em que a funcao para de chamar a si mesma e retorna um valor fixo, evitando o *Stack Overflow*). O "Passo Indutivo" torna-se a **Chamada Recursiva**, onde a funcao chama a si mesma com um subproblema menor ($n - 1$), assumindo que a chamada menor fara o trabalho corretamente.
-
----
-
-### 3. Analise Assintotica (Notacao Big-O)
-**Enunciado:** Avalie o desempenho teorico de algoritmos usando a notacao Big-O.
-* **a)** Dado um algoritmo que possui dois loops `for` independentes (um apos o outro) iterando $n$ vezes, e outro algoritmo com dois loops `for` aninhados (um dentro do outro) iterando $n$ vezes. Quais sao as complexidades de tempo de cada um?
-* **b)** Por que a constante e ignorada na notacao Big-O (ex: $O(2n)$ vira $O(n)$)?
-
-**Proposta de Resolucao:**
-* **a)** O algoritmo com loops independentes tem complexidade $O(n + n)$, que simplifica para **$O(n)$** (Linear). O algoritmo com loops aninhados executa o loop interno $n$ vezes para cada iteracao do loop externo, resultando em complexidade **$O(n^2)$** (Quadratica).
-* **b)** A notacao Big-O analisa a *taxa de crescimento* do algoritmo quando a entrada $n$ tende ao infinito. Para valores massivos de $n$, termos constantes ou coeficientes multiplicativos tornam-se insignificantes na curva de crescimento em comparacao com a ordem de grandeza dominante (a potencia de $n$).
+**Proposta de Resolução:**
+* **a)** O Hexadecimal (base 16) é usado por ser uma forma extremamente compacta e legível de representar números binários longos. Exatamente 4 bits (um *nibble*) correspondem a exatamente 1 dígito hexadecimal (0-F). Isso facilita a vida dos programadores ao ler endereços de memória, cores e instruções de máquina, reduzindo erros de leitura.
+* **b)** A propriedade fundamental do `XOR` (`^`) é que um número submetido ao `XOR` por ele mesmo resulta em zero ($A \oplus A = 0$), e um número submetido ao `XOR` por zero resulta nele mesmo ($A \oplus 0 = A$). Além disso, a ordem não importa. Portanto, se fizermos o `XOR` de todos os elementos de um array onde todos os números aparecem em pares, exceto um, os pares se anularão (virando 0), e o resultado final da operação será exatamente o elemento único que sobrou.
 
 ---
 
-### 4. Algoritmos de Ordenacao e Busca
-**Enunciado:** Compare abordagens de manipulacao de vetores.
-* **a)** Qual e a precondicao absoluta para que a Busca Binaria possa ser aplicada em um array? Qual a sua complexidade de pior caso?
-* **b)** Explique por que o algoritmo de ordenacao *Merge Sort* e preferivel ao *Bubble Sort* para grandes volumes de dados.
+### 2. Indução Matemática e Recursão
+**Enunciado:** Existe uma ligação direta entre a técnica de Prova por Indução Matemática e a construção de Algoritmos Recursivos.
+* **a)** Quais são os dois passos fundamentais de uma prova por indução matemática?
+* **b)** Como esses dois passos se traduzem na estrutura obrigatória de uma função recursiva?
 
-**Proposta de Resolucao:**
-* **a)** A precondicao e que o array esteja **previamente ordenado**. Sua complexidade de pior caso e **$O(\log n)$**, pois o algoritmo divide o espaco de busca pela metade a cada iteracao.
-* **b)** O *Bubble Sort* compara e troca elementos adjacentes repetidamente, possuindo complexidade de pior e medio caso de $O(n^2)$, o que e catastrofico para arrays muito grandes. O *Merge Sort* utiliza o paradigma Divisao e Conquista, quebrando o array pela metade repetidamente e depois mesclando de forma ordenada. Ele garante uma complexidade matematica rigida de **$O(n \log n)$** no pior caso, tornando-o infinitamente mais rapido e escalavel para grandes massas de dados.
+**Proposta de Resolução:**
+* **a)** Os dois passos são: 1) **Caso Base:** Provar que a afirmação é verdadeira para o primeiro elemento (geralmente $n = 0$ ou $n = 1$). 2) **Passo Indutivo:** Assumir que é verdadeira para um número arbitrário $k$ (Hipótese de Indução) e, com base nisso, provar que obrigatoriamente é verdadeira para $k + 1$.
+* **b)** Na programação, isso se traduz perfeitamente: O "Caso Base" da indução torna-se a **Condição de Parada** da recursão (o momento em que a função para de chamar a si mesma e retorna um valor fixo, evitando o *Stack Overflow*). O "Passo Indutivo" torna-se a **Chamada Recursiva**, onde a função chama a si mesma com um subproblema menor ($n - 1$), assumindo que a chamada menor fará o trabalho corretamente.
+
+---
+
+### 3. Análise Assintótica (Notação Big-O)
+**Enunciado:** Avalie o desempenho teórico de algoritmos usando a notação Big-O.
+* **a)** Dado um algoritmo que possui dois loops `for` independentes (um após o outro) iterando $n$ vezes, e outro algoritmo com dois loops `for` aninhados (um dentro do outro) iterando $n$ vezes. Quais são as complexidades de tempo de cada um?
+* **b)** Por que a constante é ignorada na notação Big-O (ex: $O(2n)$ vira $O(n)$)?
+
+**Proposta de Resolução:**
+* **a)** O algoritmo com loops independentes tem complexidade $O(n + n)$, que simplifica para **$O(n)$** (Linear). O algoritmo com loops aninhados executa o loop interno $n$ vezes para cada iteração do loop externo, resultando em complexidade **$O(n^2)$** (Quadrática).
+* **b)** A notação Big-O analisa a *taxa de crescimento* do algoritmo quando a entrada $n$ tende ao infinito. Para valores massivos de $n$, termos constantes ou coeficientes multiplicativos tornam-se insignificantes na curva de crescimento em comparação com a ordem de grandeza dominante (a potência de $n$).
+
+---
+
+### 4. Algoritmos de Ordenação e Busca
+**Enunciado:** Compare abordagens de manipulação de vetores.
+* **a)** Qual é a precondição absoluta para que a Busca Binária possa ser aplicada em um array? Qual a sua complexidade de pior caso?
+* **b)** Explique por que o algoritmo de ordenação *Merge Sort* é preferível ao *Bubble Sort* para grandes volumes de dados.
+
+**Proposta de Resolução:**
+* **a)** A precondição é que o array esteja **previamente ordenado**. Sua complexidade de pior caso é **$O(\log n)$**, pois o algoritmo divide o espaço de busca pela metade a cada iteração.
+* **b)** O *Bubble Sort* compara e troca elementos adjacentes repetidamente, possuindo complexidade de pior e médio caso de $O(n^2)$, o que é catastrófico para arrays muito grandes. O *Merge Sort* utiliza o paradigma Divisão e Conquista, quebrando o array pela metade repetidamente e depois mesclando de forma ordenada. Ele garante uma complexidade matemática rígida de **$O(n \log n)$** no pior caso, tornando-o infinitamente mais rápido e escalável para grandes massas de dados.
 
 ---
 
 ### 5. Tabelas Hash
 **Enunciado:** Tabelas Hash visam buscas em tempo $O(1)$.
-* **a)** O que e uma "colisao" em uma Tabela Hash?
-* **b)** Diferencie a tecnica de tratamento de colisao por "Encadeamento" (Chaining) da tecnica de "Sondagem Linear" (Linear Probing).
+* **a)** O que é uma "colisão" em uma Tabela Hash?
+* **b)** Diferencie a técnica de tratamento de colisão por "Encadeamento" (Chaining) da técnica de "Sondagem Linear" (Linear Probing).
 
-**Proposta de Resolucao:**
-* **a)** Uma colisao ocorre quando a Funcao Hash calcula o mesmo indice (endereco) de memoria para duas chaves diferentes (ex: "Ana" e "Bia" geram o mesmo indice 5).
-* **b)** No **Encadeamento**, cada posicao do vetor da Hash nao guarda o dado diretamente, mas sim um ponteiro para uma Lista Encadeada. Se houver colisao, o novo dado e apenas adicionado ao final dessa lista. Na **Sondagem Linear** (Enderecamento Aberto), todos os dados ficam no proprio vetor principal. Se o indice 5 ja estiver ocupado, o algoritmo examina o proximo indice sequencialmente (6, 7, 8...) ate encontrar um slot vazio para inserir o dado.
+**Proposta de Resolução:**
+* **a)** Uma colisão ocorre quando a Função Hash calcula o mesmo índice (endereço) de memória para duas chaves diferentes (ex: "Ana" e "Bia" geram o mesmo índice 5).
+* **b)** No **Encadeamento**, cada posição do vetor da Hash não guarda o dado diretamente, mas sim um ponteiro para uma Lista Encadeada. Se houver colisão, o novo dado é apenas adicionado ao final dessa lista. Na **Sondagem Linear** (Endereçamento Aberto), todos os dados ficam no próprio vetor principal. Se o índice 5 já estiver ocupado, o algoritmo examina o próximo índice sequencialmente (6, 7, 8...) até encontrar um slot vazio para inserir o dado.
 
 ---
 
-### 6. Arvores Binarias vs. Heaps
-**Enunciado:** Embora sejam desenhadas da mesma forma, Arvores Binarias de Busca (BST) e Heaps tem propositos distintos.
-* **a)** Qual e a regra de organizacao estrutural de uma Arvore Binaria de Busca?
-* **b)** Qual e a regra de organizacao de um Max-Heap e para qual aplicacao principal ele e usado?
+### 6. Árvores Binárias vs. Heaps
+**Enunciado:** Embora sejam desenhadas da mesma forma, Árvores Binárias de Busca (BST) e Heaps têm propósitos distintos.
+* **a)** Qual é a regra de organização estrutural de uma Árvore Binária de Busca?
+* **b)** Qual é a regra de organização de um Max-Heap e para qual aplicação principal ele é usado?
 
-**Proposta de Resolucao:**
-* **a)** Na BST, a regra e horizontal (relacional entre irmaos): Para qualquer no pai, todos os valores na sua sub-arvore **esquerda** devem ser estritamente menores que ele, e todos os valores na sub-arvore **direita** devem ser maiores.
-* **b)** No Max-Heap, a regra e vertical (hierarquica): O valor de **qualquer no pai deve ser maior ou igual** ao valor de seus filhos (nao importa qual filho seja maior entre si). A principal aplicacao do Max-Heap e a implementacao de **Filas de Prioridade**, garantindo que o maior/mais importante elemento seja sempre acessado e removido em tempo $O(1)$ na raiz.
+**Proposta de Resolução:**
+* **a)** Na BST, a regra é horizontal (relacional entre irmãos): Para qualquer nó pai, todos os valores na sua sub-árvore **esquerda** devem ser estritamente menores que ele, e todos os valores na sub-árvore **direita** devem ser maiores.
+* **b)** No Max-Heap, a regra é vertical (hierárquica): O valor de **qualquer nó pai deve ser maior ou igual** ao valor de seus filhos (não importa qual filho seja maior entre si). A principal aplicação do Max-Heap é a implementação de **Filas de Prioridade**, garantindo que o maior/mais importante elemento seja sempre acessado e removido em tempo $O(1)$ na raiz.
 
 ---
 
 ### 7. Estruturas em Grafos
 **Enunciado:** Grafos modelam redes complexas.
-* **a)** No contexto de alocacao de memoria, quando e mais vantajoso usar uma Matriz de Adjacencia e quando e melhor usar uma Lista de Adjacencia?
-* **b)** Qual estrutura de dados auxiliar e utilizada para gerenciar a fronteira de exploracao do algoritmo de Busca em Largura (BFS)?
+* **a)** No contexto de alocação de memória, quando é mais vantajoso usar uma Matriz de Adjacência e quando é melhor usar uma Lista de Adjacência?
+* **b)** Qual estrutura de dados auxiliar é utilizada para gerenciar a fronteira de exploração do algoritmo de Busca em Largura (BFS)?
 
-**Proposta de Resolucao:**
-* **a)** A **Matriz de Adjacencia** e vantajosa para grafos "densos" (onde quase todos os vertices se conectam a todos), pois permite verificar a existencia de uma aresta em tempo $O(1)$. No entanto, gasta memoria $O(V^2)$. A **Lista de Adjacencia** e melhor para grafos "esparsos" (poucas conexoes, como redes sociais), pois aloca memoria proporcional apenas ao numero de arestas reais, economizando espaco drasticamente.
-* **b)** A Busca em Largura (BFS) utiliza uma **Fila (Queue)**. Isso garante que todos os vertices que estao a uma distancia $k$ do inicio sejam visitados antes de qualquer vertice a uma distancia $k+1$, obedecendo ao principio FIFO (primeiro a entrar, primeiro a sair).
+**Proposta de Resolução:**
+* **a)** A **Matriz de Adjacência** é vantajosa para grafos "densos" (onde quase todos os vértices se conectam a todos), pois permite verificar a existência de uma aresta em tempo $O(1)$. No entanto, gasta memória $O(V^2)$. A **Lista de Adjacência** é melhor para grafos "esparsos" (poucas conexões, como redes sociais), pois aloca memória proporcional apenas ao número de arestas reais, economizando espaço drasticamente.
+* **b)** A Busca em Largura (BFS) utiliza uma **Fila (Queue)**. Isso garante que todos os vértices que estão a uma distância $k$ do início sejam visitados antes de qualquer vértice a uma distância $k+1$, obedecendo ao princípio FIFO (primeiro a entrar, primeiro a sair).
 
 ---
 
-### 8. Algoritmos em Grafos (Otimizacao)
-**Enunciado:** Explique os casos de uso dos algoritmos classicos de grafos.
-* **a)** Qual e o objetivo do Algoritmo de Dijkstra e qual e a restricao sobre os pesos das arestas para que ele funcione corretamente?
-* **b)** Explique o que e uma Arvore Geradora Minima (MST) gerada por algoritmos como Kruskal ou Prim.
+### 8. Algoritmos em Grafos (Otimização)
+**Enunciado:** Explique os casos de uso dos algoritmos clássicos de grafos.
+* **a)** Qual é o objetivo do Algoritmo de Dijkstra e qual é a restrição sobre os pesos das arestas para que ele funcione corretamente?
+* **b)** Explique o que é uma Árvore Geradora Mínima (MST) gerada por algoritmos como Kruskal ou Prim.
 
-**Proposta de Resolucao:**
-* **a)** O Algoritmo de Dijkstra serve para encontrar o **caminho de custo minimo** a partir de um vertice de origem para todos os outros vertices do grafo. A restricao fundamental e que o grafo **nao pode conter arestas com pesos negativos**, pois o algoritmo e guloso e pressupoe que, uma vez que o caminho mais curto para um no e encontrado, adicionar mais arestas so aumentara o custo total.
-* **b)** Uma Arvore Geradora Minima (MST) e um subgrafo que conecta **todos** os vertices de um grafo conexo e nao-direcionado, sem formar nenhum ciclo, e cuja **soma dos pesos das arestas e a menor possivel**. E amplamente usada em problemas de design de redes (telecomunicacoes, estradas, fiacao eletrica).
+**Proposta de Resolução:**
+* **a)** O Algoritmo de Dijkstra serve para encontrar o **caminho de custo mínimo** a partir de um vértice de origem para todos os outros vértices do grafo. A restrição fundamental é que o grafo **não pode conter arestas com pesos negativos**, pois o algoritmo é guloso e pressupõe que, uma vez que o caminho mais curto para um nó é encontrado, adicionar mais arestas só aumentará o custo total.
+* **b)** Uma Árvore Geradora Mínima (MST) é um subgrafo que conecta **todos** os vértices de um grafo conexo e não-direcionado, sem formar nenhum ciclo, e cuja **soma dos pesos das arestas é a menor possível**. É amplamente usada em problemas de design de redes (telecomunicações, estradas, fiação elétrica).
 
 ---
 
 ### 9. Paradigmas de Projeto de Algoritmos
-**Enunciado:** Compare Programacao Dinamica e Algoritmos Gulosos.
-* **a)** Qual a principal caracteristica matematica de um problema que nos permite aplicar a Programacao Dinamica de forma eficaz?
-* **b)** Por que um Algoritmo Guloso nem sempre produz a solucao otima global?
+**Enunciado:** Compare Programação Dinâmica e Algoritmos Gulosos.
+* **a)** Qual a principal característica matemática de um problema que nos permite aplicar a Programação Dinâmica de forma eficaz?
+* **b)** Por que um Algoritmo Guloso nem sempre produz a solução ótima global?
 
-**Proposta de Resolucao:**
-* **a)** A caracteristica principal e a presenca de **Subproblemas Sobrepostos**. Ou seja, a solucao recursiva ingenua calcularia a mesma coisa diversas vezes (como na sequencia de Fibonacci). A Programacao Dinamica salva esses resultados intermediarios em uma tabela (tecnica de *Memoization*), garantindo que cada subproblema seja calculado apenas uma vez.
-* **b)** O Algoritmo Guloso toma a decisao que parece ser a melhor localmente, no exato momento da escolha, sem projetar os cenarios futuros. Em problemas complexos, essa miopia pode levar a um caminho onde uma "economia" imediata force um "gasto" enorme mais a frente, resultando em uma solucao subotima global.
+**Proposta de Resolução:**
+* **a)** A característica principal é a presença de **Subproblemas Sobrepostos**. Ou seja, a solução recursiva ingênua calcularia a mesma coisa diversas vezes (como na sequência de Fibonacci). A Programação Dinâmica salva esses resultados intermediários em uma tabela (técnica de *Memoization*), garantindo que cada subproblema seja calculado apenas uma vez.
+* **b)** O Algoritmo Guloso toma a decisão que parece ser a melhor localmente, no exato momento da escolha, sem projetar os cenários futuros. Em problemas complexos, essa miopia pode levar a um caminho onde uma "economia" imediata force um "gasto" enorme mais à frente, resultando em uma solução subótima global.
 
 ---
 
-### 10. Teoria da Computacao e Classes de Complexidade
+### 10. Teoria da Computação e Classes de Complexidade
 **Enunciado:** O limite do que pode ser resolvido por computadores.
-* **a)** Qual a diferenca conceitual entre um problema da Classe P e um problema da Classe NP?
-* **b)** O Problema do Caixeiro Viajante e um classico problema NP-Completo. Na pratica, o que os engenheiros de software fazem hoje quando precisam resolver um problema NP-Completo para o qual nao existe solucao rapida conhecida?
+* **a)** Qual a diferença conceitual entre um problema da Classe P e um problema da Classe NP?
+* **b)** O Problema do Caixeiro Viajante é um clássico problema NP-Completo. Na prática, o que os engenheiros de software fazem hoje quando precisam resolver um problema NP-Completo para o qual não existe solução rápida conhecida?
 
-**Proposta de Resolucao:**
-* **a)** Problemas da **Classe P** podem ser **resolvidos** eficientemente (em tempo polinomial) por um computador deterministico. Problemas da **Classe NP** sao aqueles em que, se alguem fornecer uma resposta pronta, o computador consegue **verificar** se a resposta esta certa rapidamente (em tempo polinomial), mas nao se sabe se e possivel *encontrar* essa resposta rapidamente partindo do zero.
-* **b)** Como os problemas NP-Completos (como o Caixeiro Viajante para muitas cidades) exigiriam forca bruta com complexidade fatorial $O(n!)$, demorando milenios para processar, os engenheiros desistem de encontrar a solucao *perfeita*. Em vez disso, utilizam **Heuristicas e Algoritmos de Aproximacao** (como algoritmos geneticos ou *simulated annealing*), que encontram uma solucao "boa o suficiente" e muito proxima do ideal em um tempo aceitavel (segundos ou minutos).
+**Proposta de Resolução:**
+* **a)** Problemas da **Classe P** podem ser **resolvidos** eficientemente (em tempo polinomial) por um computador determinístico. Problemas da **Classe NP** são aqueles em que, se alguém fornecer uma resposta pronta, o computador consegue **verificar** se a resposta está certa rapidamente (em tempo polinomial), mas não se sabe se é possível *encontrar* essa resposta rapidamente partindo do zero.
+* **b)** Como os problemas NP-Completos (como o Caixeiro Viajante para muitas cidades) exigiriam força bruta com complexidade fatorial $O(n!)$, demorando milênios para processar, os engenheiros desistem de encontrar a solução *perfeita*. Em vez disso, utilizam **Heurísticas e Algoritmos de Aproximação** (como algoritmos genéticos ou *simulated annealing*), que encontram uma solução "boa o suficiente" e muito próxima do ideal em um tempo aceitável (segundos ou minutos).
 </script>
 <script>
     const rawMd = document.getElementById('md-source').textContent;
     marked.setOptions({ breaks: true, gfm: true });
     function renderMarkdown(md) { return marked.parse(md); }
     document.getElementById('content').innerHTML = renderMarkdown(rawMd);
-    const sectionMap = { 'sec-1': 'Sistemas e Logica', 'sec-2': 'Inducao Matematica', 'sec-3': 'Analise Assintotica', 'sec-4': 'Ordenacao e Busca', 'sec-5': 'Tabelas Hash', 'sec-6': 'Arvores Binarias vs', 'sec-7': 'Estruturas em Grafos', 'sec-8': 'Algoritmos em Grafos', 'sec-9': 'Paradigmas de Projeto', 'sec-10': 'Classes de Complexidade' };
+    const sectionMap = { 'sec-1': 'Sistemas e Lógica', 'sec-2': 'Indução Matemática', 'sec-3': 'Análise Assin', 'sec-4': 'Ordenação e Busca', 'sec-5': 'Tabelas Hash', 'sec-6': 'Árvores Binárias vs', 'sec-7': 'Estruturas em Grafos', 'sec-8': 'Algoritmos em Grafos', 'sec-9': 'Paradigmas de Projeto', 'sec-10': 'Classes de Complexidade' };
     function assignIds() { const headings = document.querySelectorAll('.markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4'); headings.forEach(h => { const txt = h.textContent.trim(); for (const [id, keyword] of Object.entries(sectionMap)) { if (txt.includes(keyword) && !h.id) { h.id = id; break; } } }); }
     assignIds();
     function toggleTheme() { const html = document.documentElement; const isDark = html.getAttribute('data-theme') === 'dark'; html.setAttribute('data-theme', isDark ? 'light' : 'dark'); document.getElementById('theme-btn').textContent = isDark ? '\u{1F319} Modo Noturno' : '\u{2600}\u{FE0F} Modo Claro'; localStorage.setItem('theme-global', isDark ? 'light' : 'dark'); }

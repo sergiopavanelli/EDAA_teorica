@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -:*)",
+      "Bash(python fix_accents.py)",
+      "Bash(python -c \":*)",
+      "Bash(del:*)"
+    ]
+  }
+}
