@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDAA — Simulado A1 Parte 02 · Cobertura Completa da Ementa</title>
+    <script>(function(){var t=localStorage.getItem("theme-global");if(t)document.documentElement.setAttribute("data-theme",t);})();</script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        :root { --primary: #2563eb; --primary-dark: #1e40af; --bg: #f8fafc; --sidebar-bg: #ffffff; --card-bg: #ffffff; --text-main: #1e293b; --text-muted: #64748b; --border: #e2e8f0; --accent: #f59e0b; --success: #10b981; --code-bg: #1e293b; --code-text: #e2e8f0; --table-header: #f1f5f9; --shadow: 0 4px 6px -1px rgba(0,0,0,0.1); --highlight-bg: #fef08a; --highlight-text: #1e293b; }
+        [data-theme="dark"] { --bg: #0f172a; --sidebar-bg: #1e293b; --card-bg: #1e293b; --text-main: #f8fafc; --text-muted: #94a3b8; --border: #334155; --primary: #3b82f6; --primary-dark: #60a5fa; --table-header: #334155; --code-bg: #000000; --code-text: #e2e8f0; --shadow: 0 10px 15px -3px rgba(0,0,0,0.4); --highlight-bg: #854d0e; --highlight-text: #fef9c3; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text-main); line-height: 1.6; display: flex; height: 100vh; overflow: hidden; transition: background 0.3s, color 0.3s; }
+        .sidebar { width: 340px; min-width: 340px; background: var(--sidebar-bg); border-right: 1px solid var(--border); display: flex; flex-direction: column; z-index: 100; transition: all 0.3s; }
+        .sidebar-header { padding: 1.5rem; border-bottom: 1px solid var(--border); }
+        .sidebar-header h1 { font-size: 1rem; font-weight: 800; color: var(--primary); margin-bottom: 1rem; line-height: 1.4; }
+        .search-box { width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 0.5rem; font-size: 0.9rem; background: var(--bg); color: var(--text-main); outline: none; transition: border 0.2s; }
+        .search-box:focus { border-color: var(--primary); }
+        .search-count { font-size: 0.75rem; color: var(--text-muted); margin-top: 0.4rem; min-height: 1.2em; }
+        .nav-container { flex: 1; overflow-y: auto; padding: 1rem; }
+        .nav-group { margin-bottom: 0.5rem; }
+        .nav-group-title { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; color: var(--text-muted); border-bottom: 1px solid var(--border); padding-bottom: 0.4rem; margin-bottom: 0.5rem; letter-spacing: 0.05em; }
+        .nav-item { display: flex; align-items: flex-start; padding: 0.6rem 0.75rem; border-radius: 0.5rem; cursor: pointer; font-size: 0.85rem; color: var(--text-main); margin-bottom: 0.15rem; transition: background 0.2s; border: 1px solid transparent; text-decoration: none; gap: 0.5rem; }
+        .nav-item:hover { background: rgba(37,99,235,0.08); color: var(--primary); }
+        .nav-item.active { background: var(--primary); color: white; font-weight: 600; border-color: var(--primary-dark); }
+        .nav-item .nav-icon { font-size: 0.95em; flex-shrink: 0; margin-top: 0.05em; }
+        .main-content { flex: 1; overflow-y: auto; display: flex; flex-direction: column; position: relative; }
+        .header-bar { padding: 1rem 2.5rem; background: var(--sidebar-bg); border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 50; gap: 1rem; }
+        .header-left { display: flex; align-items: center; gap: 1rem; font-size: 0.8rem; color: var(--text-muted); font-weight: 600; }
+        .badge { background: var(--primary); color: white; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.7rem; font-weight: 700; }
+        .badge-warn { background: #f59e0b; }
+        .badge-green { background: #10b981; }
+        .theme-toggle { background: var(--border); border: none; padding: 0.55rem 1.1rem; border-radius: 2rem; cursor: pointer; color: var(--text-main); font-weight: 600; font-size: 0.85rem; display: flex; align-items: center; gap: 0.5rem; transition: background 0.2s; white-space: nowrap; }
+        .theme-toggle:hover { background: var(--primary); color: white; }
+        .content-container { padding: 3rem 2.5rem 5rem; max-width: 960px; margin: 0 auto; width: 100%; }
+        .markdown-body { font-size: 1.05rem; }
+        .markdown-body h1 { font-size: 2rem; border-bottom: 3px solid var(--primary); padding-bottom: 0.5rem; color: var(--primary); margin-top: 0; margin-bottom: 1rem; font-weight: 800; line-height: 1.3; }
+        .markdown-body h2 { font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.4rem; color: var(--primary); margin-top: 2.5rem; margin-bottom: 1rem; font-weight: 800; }
+        .markdown-body h3 { font-size: 1.2rem; color: var(--text-main); border-left: 5px solid var(--accent); padding-left: 10px; margin-top: 2rem; margin-bottom: 0.8rem; font-weight: 700; }
+        .markdown-body h4 { font-size: 1.05rem; color: var(--text-main); margin-top: 1.5rem; margin-bottom: 0.7rem; font-weight: 700; }
+        .markdown-body p { margin-bottom: 1rem; text-align: justify; line-height: 1.75; }
+        .markdown-body ul, .markdown-body ol { margin-left: 1.75rem; margin-bottom: 1.25rem; }
+        .markdown-body li { margin-bottom: 0.5rem; line-height: 1.7; }
+        .markdown-body strong { font-weight: 700; color: var(--text-main); }
+        .markdown-body em { font-style: italic; color: var(--text-muted); }
+        .markdown-body hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+        .markdown-body blockquote { border-left: 5px solid var(--accent); padding: 0.9rem 1.4rem; background: var(--bg); border-radius: 0.5rem; margin: 1.25rem 0; color: var(--text-main); }
+        .markdown-body blockquote p { margin-bottom: 0; text-align: left; }
+        .markdown-body pre { background: var(--code-bg); padding: 1.25rem 1.5rem; border-radius: 0.75rem; overflow-x: auto; margin: 1.25rem 0; }
+        .markdown-body code { font-family: 'Fira Code', monospace; font-size: 0.88em; background: var(--bg); padding: 0.15rem 0.4rem; border-radius: 0.25rem; color: var(--primary); border: 1px solid var(--border); }
+        .markdown-body pre code { background: none; padding: 0; color: var(--code-text); border: none; font-size: 0.9em; line-height: 1.6; }
+        .markdown-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; background: var(--card-bg); box-shadow: var(--shadow); border-radius: 0.5rem; overflow: hidden; }
+        .markdown-body th, .markdown-body td { border: 1px solid var(--border); padding: 0.85rem 1rem; text-align: left; vertical-align: top; }
+        .markdown-body th { background: var(--table-header); font-weight: 700; font-size: 0.9rem; }
+        .markdown-body td { font-size: 0.95rem; }
+        .highlight-match { background: var(--highlight-bg); color: var(--highlight-text); border-radius: 2px; padding: 0 2px; }
+        .scroll-top { position: fixed; bottom: 2rem; right: 2rem; background: var(--primary); color: white; width: 44px; height: 44px; border-radius: 50%; border: none; font-size: 1.2rem; cursor: pointer; z-index: 999; box-shadow: 0 4px 12px rgba(37,99,235,0.4); opacity: 0; transition: opacity 0.3s; display: flex; align-items: center; justify-content: center; }
+        .scroll-top.visible { opacity: 1; }
+        .sidebar.collapsed { width: 0; min-width: 0; overflow: hidden; border-right: none; }
+        .sidebar-toggle { background: var(--border); border: none; padding: 0.55rem 0.8rem; border-radius: 2rem; cursor: pointer; color: var(--text-main); font-weight: 700; font-size: 1rem; transition: background 0.2s; line-height: 1; }
+        .sidebar-toggle:hover { background: var(--primary); color: white; }
+        .mobile-toggle { display: none; position: fixed; bottom: 2rem; left: 2rem; background: var(--primary); color: white; width: 52px; height: 52px; border-radius: 50%; font-size: 1.3rem; border: none; z-index: 1000; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.3); cursor: pointer; }
+        @media (max-width: 768px) { .sidebar { position: fixed; left: -100%; height: 100%; transition: left 0.3s; } .sidebar.open { left: 0; } .mobile-toggle { display: flex; align-items: center; justify-content: center; } .content-container { padding: 2rem 1.25rem 5rem; } .header-bar { padding: 0.75rem 1.25rem; } }
+        .page-footer { text-align: center; padding: 1.5rem 2rem; font-size: 0.77rem; color: var(--text-muted); border-top: 1px solid var(--border); margin-top: auto; background: var(--sidebar-bg); }
+        .home-btn { background: var(--border); border: none; padding: 0.55rem 1rem; border-radius: 2rem; cursor: pointer; color: var(--text-main); font-weight: 600; font-size: 0.82rem; display: inline-flex; align-items: center; gap: 0.4rem; transition: background 0.2s; text-decoration: none; white-space: nowrap; font-family: inherit; }
+        .home-btn:hover { background: var(--primary); color: white; }
+        @media (max-width: 768px) { body { height: 100dvh; overflow-x: hidden; } .main-content { overflow-x: hidden; } .sidebar-toggle { display: none; } .header-left .badge { display: none; } .header-bar { gap: 0.4rem; flex-wrap: wrap; } .markdown-body table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; } .markdown-body pre { overflow-x: auto; max-width: 100%; } .home-btn { padding: 0.45rem 0.7rem; font-size: 0.78rem; } .theme-toggle { padding: 0.45rem 0.75rem; font-size: 0.78rem; } .markdown-body { font-size: 0.97rem; } .markdown-body h1 { font-size: 1.55rem; } .markdown-body h2 { font-size: 1.25rem; } }
+    </style>
+</head>
+<body>
+<button class="mobile-toggle" onclick="toggleSidebar()">&#9776;</button>
+<aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+        <h1>&#128221; Simulado A1 — Parte 02<br>Cobertura Completa da Ementa</h1>
+        <input type="text" class="search-box" id="search-input" placeholder="&#128269; Buscar no conteudo..." oninput="handleSearch(this.value)">
+        <div class="search-count" id="search-count"></div>
+    </div>
+    <div class="nav-container" id="nav-container">
+        <div class="nav-group">
+            <div class="nav-group-title">Questoes Discursivas</div>
+            <a class="nav-item" href="#sec-1" onclick="navClick(this)"><span class="nav-icon">1&#65039;&#8419;</span> Sistemas e Logica</a>
+            <a class="nav-item" href="#sec-2" onclick="navClick(this)"><span class="nav-icon">2&#65039;&#8419;</span> Inducao e Recursao</a>
+            <a class="nav-item" href="#sec-3" onclick="navClick(this)"><span class="nav-icon">3&#65039;&#8419;</span> Analise Assintotica (Big-O)</a>
+            <a class="nav-item" href="#sec-4" onclick="navClick(this)"><span class="nav-icon">4&#65039;&#8419;</span> Ordenacao e Busca</a>
+            <a class="nav-item" href="#sec-5" onclick="navClick(this)"><span class="nav-icon">5&#65039;&#8419;</span> Tabelas Hash</a>
+            <a class="nav-item" href="#sec-6" onclick="navClick(this)"><span class="nav-icon">6&#65039;&#8419;</span> Arvores Binarias vs Heaps</a>
+            <a class="nav-item" href="#sec-7" onclick="navClick(this)"><span class="nav-icon">7&#65039;&#8419;</span> Estruturas em Grafos</a>
+            <a class="nav-item" href="#sec-8" onclick="navClick(this)"><span class="nav-icon">8&#65039;&#8419;</span> Algoritmos em Grafos</a>
+            <a class="nav-item" href="#sec-9" onclick="navClick(this)"><span class="nav-icon">9&#65039;&#8419;</span> Paradigmas de Projeto</a>
+            <a class="nav-item" href="#sec-10" onclick="navClick(this)"><span class="nav-icon">&#128287;</span> Classes de Complexidade</a>
+        </div>
+    </div>
+</aside>
+<main class="main-content" id="main-content">
+    <header class="header-bar">
+        <div class="header-left">
+            <button class="sidebar-toggle" onclick="toggleSidebarDesktop()" id="sidebar-toggle-btn" title="Ocultar/exibir menu">&#9664;</button>
+            <span class="badge">EDAA</span>
+            <span class="badge badge-warn">Simulado A1</span>
+            <span class="badge badge-green">Ementa Completa</span>
+        </div>
+        <button class="home-btn" onclick="history.back()" title="Voltar a pagina anterior">&larr; Voltar</button>
+        <a class="home-btn" href="index.html" title="Voltar ao indice">&#127968; Inicio</a>
+        <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn">&#127769; Modo Noturno</button>
+    </header>
+    <div class="content-container">
+        <div class="markdown-body" id="content"></div>
+    </div>
+    <footer class="page-footer">EDAA UniBH 2026/1 &middot; Sergio Pinton Pavanelli</footer>
+</main>
+<button class="scroll-top" id="scroll-top" onclick="scrollToTop()" title="Voltar ao topo">&uarr;</button>
+<script id="md-source" type="text/markdown">
+# &#128221; Simulado A1 (Discursiva) - Parte 02: Cobertura Completa da Ementa
+
+Este simulado testa o dominio dos modulos avancados da disciplina: Matematica Computacional, Complexidade, Arvores, Grafos, Hash e Paradigmas de Algoritmos.
+
+---
+
+## 1. Fundamentos Matematicos: Sistemas e Logica
+**Enunciado:** A computacao em baixo nivel exige o dominio de bases numericas e logica booleana.
+* **a)** Explique por que o sistema Hexadecimal e amplamente utilizado na computacao, mesmo o processador operando apenas em Binario.
+* **b)** Considere a operacao logica `XOR` (Ou Exclusivo) entre dois bits. Qual e a propriedade matematica que torna o `XOR` extremamente util para encontrar elementos unicos em um array sem usar espaco extra de memoria?
+
+**Proposta de Resolucao:**
+* **a)** O Hexadecimal (base 16) e usado por ser uma forma extremamente compacta e legivel de representar numeros binarios longos. Exatamente 4 bits (um *nibble*) correspondem a exatamente 1 digito hexadecimal (0-F). Isso facilita a vida dos programadores ao ler enderecos de memoria, cores e instrucoes de maquina, reduzindo erros de leitura.
+* **b)** A propriedade fundamental do `XOR` (`^`) e que um numero submetido ao `XOR` por ele mesmo resulta em zero ($A \oplus A = 0$), e um numero submetido ao `XOR` por zero resulta nele mesmo ($A \oplus 0 = A$). Alem disso, a ordem nao importa. Portanto, se fizermos o `XOR` de todos os elementos de um array onde todos os numeros aparecem em pares, exceto um, os pares se anularao (virando 0), e o resultado final da operacao sera exatamente o elemento unico que sobrou.
+
+---
+
+### 2. Inducao Matematica e Recursao
+**Enunciado:** Existe uma ligacao direta entre a tecnica de Prova por Inducao Matematica e a construcao de Algoritmos Recursivos.
+* **a)** Quais sao os dois passos fundamentais de uma prova por inducao matematica?
+* **b)** Como esses dois passos se traduzem na estrutura obrigatoria de uma funcao recursiva?
+
+**Proposta de Resolucao:**
+* **a)** Os dois passos sao: 1) **Caso Base:** Provar que a afirmacao e verdadeira para o primeiro elemento (geralmente $n = 0$ ou $n = 1$). 2) **Passo Indutivo:** Assumir que e verdadeira para um numero arbitrario $k$ (Hipotese de Inducao) e, com base nisso, provar que obrigatoriamente e verdadeira para $k + 1$.
+* **b)** Na programacao, isso se traduz perfeitamente: O "Caso Base" da inducao torna-se a **Condicao de Parada** da recursao (o momento em que a funcao para de chamar a si mesma e retorna um valor fixo, evitando o *Stack Overflow*). O "Passo Indutivo" torna-se a **Chamada Recursiva**, onde a funcao chama a si mesma com um subproblema menor ($n - 1$), assumindo que a chamada menor fara o trabalho corretamente.
+
+---
+
+### 3. Analise Assintotica (Notacao Big-O)
+**Enunciado:** Avalie o desempenho teorico de algoritmos usando a notacao Big-O.
+* **a)** Dado um algoritmo que possui dois loops `for` independentes (um apos o outro) iterando $n$ vezes, e outro algoritmo com dois loops `for` aninhados (um dentro do outro) iterando $n$ vezes. Quais sao as complexidades de tempo de cada um?
+* **b)** Por que a constante e ignorada na notacao Big-O (ex: $O(2n)$ vira $O(n)$)?
+
+**Proposta de Resolucao:**
+* **a)** O algoritmo com loops independentes tem complexidade $O(n + n)$, que simplifica para **$O(n)$** (Linear). O algoritmo com loops aninhados executa o loop interno $n$ vezes para cada iteracao do loop externo, resultando em complexidade **$O(n^2)$** (Quadratica).
+* **b)** A notacao Big-O analisa a *taxa de crescimento* do algoritmo quando a entrada $n$ tende ao infinito. Para valores massivos de $n$, termos constantes ou coeficientes multiplicativos tornam-se insignificantes na curva de crescimento em comparacao com a ordem de grandeza dominante (a potencia de $n$).
+
+---
+
+### 4. Algoritmos de Ordenacao e Busca
+**Enunciado:** Compare abordagens de manipulacao de vetores.
+* **a)** Qual e a precondicao absoluta para que a Busca Binaria possa ser aplicada em um array? Qual a sua complexidade de pior caso?
+* **b)** Explique por que o algoritmo de ordenacao *Merge Sort* e preferivel ao *Bubble Sort* para grandes volumes de dados.
+
+**Proposta de Resolucao:**
+* **a)** A precondicao e que o array esteja **previamente ordenado**. Sua complexidade de pior caso e **$O(\log n)$**, pois o algoritmo divide o espaco de busca pela metade a cada iteracao.
+* **b)** O *Bubble Sort* compara e troca elementos adjacentes repetidamente, possuindo complexidade de pior e medio caso de $O(n^2)$, o que e catastrofico para arrays muito grandes. O *Merge Sort* utiliza o paradigma Divisao e Conquista, quebrando o array pela metade repetidamente e depois mesclando de forma ordenada. Ele garante uma complexidade matematica rigida de **$O(n \log n)$** no pior caso, tornando-o infinitamente mais rapido e escalavel para grandes massas de dados.
+
+---
+
+### 5. Tabelas Hash
+**Enunciado:** Tabelas Hash visam buscas em tempo $O(1)$.
+* **a)** O que e uma "colisao" em uma Tabela Hash?
+* **b)** Diferencie a tecnica de tratamento de colisao por "Encadeamento" (Chaining) da tecnica de "Sondagem Linear" (Linear Probing).
+
+**Proposta de Resolucao:**
+* **a)** Uma colisao ocorre quando a Funcao Hash calcula o mesmo indice (endereco) de memoria para duas chaves diferentes (ex: "Ana" e "Bia" geram o mesmo indice 5).
+* **b)** No **Encadeamento**, cada posicao do vetor da Hash nao guarda o dado diretamente, mas sim um ponteiro para uma Lista Encadeada. Se houver colisao, o novo dado e apenas adicionado ao final dessa lista. Na **Sondagem Linear** (Enderecamento Aberto), todos os dados ficam no proprio vetor principal. Se o indice 5 ja estiver ocupado, o algoritmo examina o proximo indice sequencialmente (6, 7, 8...) ate encontrar um slot vazio para inserir o dado.
+
+---
+
+### 6. Arvores Binarias vs. Heaps
+**Enunciado:** Embora sejam desenhadas da mesma forma, Arvores Binarias de Busca (BST) e Heaps tem propositos distintos.
+* **a)** Qual e a regra de organizacao estrutural de uma Arvore Binaria de Busca?
+* **b)** Qual e a regra de organizacao de um Max-Heap e para qual aplicacao principal ele e usado?
+
+**Proposta de Resolucao:**
+* **a)** Na BST, a regra e horizontal (relacional entre irmaos): Para qualquer no pai, todos os valores na sua sub-arvore **esquerda** devem ser estritamente menores que ele, e todos os valores na sub-arvore **direita** devem ser maiores.
+* **b)** No Max-Heap, a regra e vertical (hierarquica): O valor de **qualquer no pai deve ser maior ou igual** ao valor de seus filhos (nao importa qual filho seja maior entre si). A principal aplicacao do Max-Heap e a implementacao de **Filas de Prioridade**, garantindo que o maior/mais importante elemento seja sempre acessado e removido em tempo $O(1)$ na raiz.
+
+---
+
+### 7. Estruturas em Grafos
+**Enunciado:** Grafos modelam redes complexas.
+* **a)** No contexto de alocacao de memoria, quando e mais vantajoso usar uma Matriz de Adjacencia e quando e melhor usar uma Lista de Adjacencia?
+* **b)** Qual estrutura de dados auxiliar e utilizada para gerenciar a fronteira de exploracao do algoritmo de Busca em Largura (BFS)?
+
+**Proposta de Resolucao:**
+* **a)** A **Matriz de Adjacencia** e vantajosa para grafos "densos" (onde quase todos os vertices se conectam a todos), pois permite verificar a existencia de uma aresta em tempo $O(1)$. No entanto, gasta memoria $O(V^2)$. A **Lista de Adjacencia** e melhor para grafos "esparsos" (poucas conexoes, como redes sociais), pois aloca memoria proporcional apenas ao numero de arestas reais, economizando espaco drasticamente.
+* **b)** A Busca em Largura (BFS) utiliza uma **Fila (Queue)**. Isso garante que todos os vertices que estao a uma distancia $k$ do inicio sejam visitados antes de qualquer vertice a uma distancia $k+1$, obedecendo ao principio FIFO (primeiro a entrar, primeiro a sair).
+
+---
+
+### 8. Algoritmos em Grafos (Otimizacao)
+**Enunciado:** Explique os casos de uso dos algoritmos classicos de grafos.
+* **a)** Qual e o objetivo do Algoritmo de Dijkstra e qual e a restricao sobre os pesos das arestas para que ele funcione corretamente?
+* **b)** Explique o que e uma Arvore Geradora Minima (MST) gerada por algoritmos como Kruskal ou Prim.
+
+**Proposta de Resolucao:**
+* **a)** O Algoritmo de Dijkstra serve para encontrar o **caminho de custo minimo** a partir de um vertice de origem para todos os outros vertices do grafo. A restricao fundamental e que o grafo **nao pode conter arestas com pesos negativos**, pois o algoritmo e guloso e pressupoe que, uma vez que o caminho mais curto para um no e encontrado, adicionar mais arestas so aumentara o custo total.
+* **b)** Uma Arvore Geradora Minima (MST) e um subgrafo que conecta **todos** os vertices de um grafo conexo e nao-direcionado, sem formar nenhum ciclo, e cuja **soma dos pesos das arestas e a menor possivel**. E amplamente usada em problemas de design de redes (telecomunicacoes, estradas, fiacao eletrica).
+
+---
+
+### 9. Paradigmas de Projeto de Algoritmos
+**Enunciado:** Compare Programacao Dinamica e Algoritmos Gulosos.
+* **a)** Qual a principal caracteristica matematica de um problema que nos permite aplicar a Programacao Dinamica de forma eficaz?
+* **b)** Por que um Algoritmo Guloso nem sempre produz a solucao otima global?
+
+**Proposta de Resolucao:**
+* **a)** A caracteristica principal e a presenca de **Subproblemas Sobrepostos**. Ou seja, a solucao recursiva ingenua calcularia a mesma coisa diversas vezes (como na sequencia de Fibonacci). A Programacao Dinamica salva esses resultados intermediarios em uma tabela (tecnica de *Memoization*), garantindo que cada subproblema seja calculado apenas uma vez.
+* **b)** O Algoritmo Guloso toma a decisao que parece ser a melhor localmente, no exato momento da escolha, sem projetar os cenarios futuros. Em problemas complexos, essa miopia pode levar a um caminho onde uma "economia" imediata force um "gasto" enorme mais a frente, resultando em uma solucao subotima global.
+
+---
+
+### 10. Teoria da Computacao e Classes de Complexidade
+**Enunciado:** O limite do que pode ser resolvido por computadores.
+* **a)** Qual a diferenca conceitual entre um problema da Classe P e um problema da Classe NP?
+* **b)** O Problema do Caixeiro Viajante e um classico problema NP-Completo. Na pratica, o que os engenheiros de software fazem hoje quando precisam resolver um problema NP-Completo para o qual nao existe solucao rapida conhecida?
+
+**Proposta de Resolucao:**
+* **a)** Problemas da **Classe P** podem ser **resolvidos** eficientemente (em tempo polinomial) por um computador deterministico. Problemas da **Classe NP** sao aqueles em que, se alguem fornecer uma resposta pronta, o computador consegue **verificar** se a resposta esta certa rapidamente (em tempo polinomial), mas nao se sabe se e possivel *encontrar* essa resposta rapidamente partindo do zero.
+* **b)** Como os problemas NP-Completos (como o Caixeiro Viajante para muitas cidades) exigiriam forca bruta com complexidade fatorial $O(n!)$, demorando milenios para processar, os engenheiros desistem de encontrar a solucao *perfeita*. Em vez disso, utilizam **Heuristicas e Algoritmos de Aproximacao** (como algoritmos geneticos ou *simulated annealing*), que encontram uma solucao "boa o suficiente" e muito proxima do ideal em um tempo aceitavel (segundos ou minutos).
+</script>
+<script>
+    const rawMd = document.getElementById('md-source').textContent;
+    marked.setOptions({ breaks: true, gfm: true });
+    function renderMarkdown(md) { return marked.parse(md); }
+    document.getElementById('content').innerHTML = renderMarkdown(rawMd);
+    const sectionMap = { 'sec-1': 'Sistemas e Logica', 'sec-2': 'Inducao Matematica', 'sec-3': 'Analise Assintotica', 'sec-4': 'Ordenacao e Busca', 'sec-5': 'Tabelas Hash', 'sec-6': 'Arvores Binarias vs', 'sec-7': 'Estruturas em Grafos', 'sec-8': 'Algoritmos em Grafos', 'sec-9': 'Paradigmas de Projeto', 'sec-10': 'Classes de Complexidade' };
+    function assignIds() { const headings = document.querySelectorAll('.markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4'); headings.forEach(h => { const txt = h.textContent.trim(); for (const [id, keyword] of Object.entries(sectionMap)) { if (txt.includes(keyword) && !h.id) { h.id = id; break; } } }); }
+    assignIds();
+    function toggleTheme() { const html = document.documentElement; const isDark = html.getAttribute('data-theme') === 'dark'; html.setAttribute('data-theme', isDark ? 'light' : 'dark'); document.getElementById('theme-btn').textContent = isDark ? '\u{1F319} Modo Noturno' : '\u{2600}\u{FE0F} Modo Claro'; localStorage.setItem('theme-global', isDark ? 'light' : 'dark'); }
+    const savedTheme = localStorage.getItem('theme-global'); if (savedTheme) { document.documentElement.setAttribute('data-theme', savedTheme); document.getElementById('theme-btn').textContent = savedTheme === 'dark' ? '\u{2600}\u{FE0F} Modo Claro' : '\u{1F319} Modo Noturno'; }
+    function navClick(el) { document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active')); el.classList.add('active'); if (window.innerWidth <= 768) document.getElementById('sidebar').classList.remove('open'); }
+    const mainEl = document.getElementById('main-content');
+    mainEl.addEventListener('scroll', () => { const scrollY = mainEl.scrollTop + 120; let currentId = null; Object.keys(sectionMap).forEach(id => { const el = document.getElementById(id); if (el && el.offsetTop <= scrollY) currentId = id; }); if (currentId) { document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active')); const activeLink = document.querySelector(`.nav-item[href="#${currentId}"]`); if (activeLink) activeLink.classList.add('active'); } document.getElementById('scroll-top').classList.toggle('visible', mainEl.scrollTop > 400); });
+    function scrollToTop() { mainEl.scrollTo({ top: 0, behavior: 'smooth' }); }
+    let searchTimeout;
+    function handleSearch(query) { clearTimeout(searchTimeout); searchTimeout = setTimeout(() => performSearch(query), 250); }
+    function performSearch(query) { const countEl = document.getElementById('search-count'); if (!query.trim()) { document.getElementById('content').innerHTML = renderMarkdown(rawMd); assignIds(); countEl.textContent = ''; return; } let html = renderMarkdown(rawMd); const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); const regex = new RegExp(`(${escaped})`, 'gi'); const matches = (html.match(regex) || []).length; const tempDiv = document.createElement('div'); tempDiv.innerHTML = html; highlightInNode(tempDiv, regex); document.getElementById('content').innerHTML = tempDiv.innerHTML; assignIds(); countEl.textContent = matches > 0 ? `${matches} ocorrencia(s) encontrada(s)` : 'Nenhum resultado encontrado.'; const firstMatch = document.querySelector('.highlight-match'); if (firstMatch) firstMatch.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+    function highlightInNode(node, regex) { if (node.nodeType === Node.TEXT_NODE) { const text = node.textContent; if (regex.test(text)) { const span = document.createElement('span'); span.innerHTML = text.replace(regex, '<mark class="highlight-match">$1</mark>'); node.parentNode.replaceChild(span, node); } } else if (node.nodeType === Node.ELEMENT_NODE && !['SCRIPT','STYLE','PRE','CODE'].includes(node.tagName)) { Array.from(node.childNodes).forEach(child => highlightInNode(child, regex)); } }
+    document.getElementById('search-input').addEventListener('keydown', e => { if (e.key === 'Enter') performSearch(e.target.value); if (e.key === 'Escape') { e.target.value = ''; performSearch(''); } });
+    function toggleSidebar() { document.getElementById('sidebar').classList.toggle('open'); }
+    function toggleSidebarDesktop() { const sidebar = document.getElementById('sidebar'); const btn = document.getElementById('sidebar-toggle-btn'); const collapsed = sidebar.classList.toggle('collapsed'); btn.textContent = collapsed ? '\u25B6' : '\u25C0'; btn.title = collapsed ? 'Exibir menu' : 'Ocultar menu'; }
+</script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDAA — Estruturas de Dados e Analise de Algoritmos · UniBH 2026/1</title>
+    <script>(function(){var t=localStorage.getItem("theme-global");if(t)document.documentElement.setAttribute("data-theme",t);})();</script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #2563eb; --primary-dark: #1e40af; --bg: #f8fafc; --sidebar-bg: #ffffff; --card-bg: #ffffff; --text-main: #1e293b; --text-muted: #64748b; --border: #e2e8f0; --accent: #f59e0b; --success: #10b981; --shadow: 0 4px 6px -1px rgba(0,0,0,0.1); --shadow-lg: 0 10px 25px -5px rgba(0,0,0,0.1); }
+        [data-theme="dark"] { --bg: #0f172a; --sidebar-bg: #1e293b; --card-bg: #1e293b; --text-main: #f8fafc; --text-muted: #94a3b8; --border: #334155; --primary: #3b82f6; --primary-dark: #60a5fa; --shadow: 0 4px 6px -1px rgba(0,0,0,0.3); --shadow-lg: 0 10px 25px -5px rgba(0,0,0,0.4); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text-main); line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; transition: background 0.3s, color 0.3s; }
+        .header { background: var(--sidebar-bg); border-bottom: 1px solid var(--border); padding: 1.5rem 2.5rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 50; }
+        .header-left { display: flex; align-items: center; gap: 1rem; }
+        .header-title { font-size: 1.1rem; font-weight: 800; color: var(--primary); }
+        .badge { background: var(--primary); color: white; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.7rem; font-weight: 700; }
+        .badge-warn { background: #f59e0b; }
+        .badge-green { background: #10b981; }
+        .theme-toggle { background: var(--border); border: none; padding: 0.55rem 1.1rem; border-radius: 2rem; cursor: pointer; color: var(--text-main); font-weight: 600; font-size: 0.85rem; display: flex; align-items: center; gap: 0.5rem; transition: background 0.2s; white-space: nowrap; }
+        .theme-toggle:hover { background: var(--primary); color: white; }
+        .main { flex: 1; padding: 3rem 2.5rem 4rem; max-width: 900px; margin: 0 auto; width: 100%; }
+        .hero { text-align: center; margin-bottom: 3rem; }
+        .hero h1 { font-size: 2.2rem; font-weight: 800; color: var(--primary); margin-bottom: 0.75rem; line-height: 1.3; }
+        .hero p { font-size: 1.05rem; color: var(--text-muted); max-width: 600px; margin: 0 auto; line-height: 1.7; }
+        .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+        .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 1rem; padding: 2rem 1.75rem; text-decoration: none; color: var(--text-main); transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 0.75rem; }
+        .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--primary); }
+        .card-icon { font-size: 2.5rem; margin-bottom: 0.25rem; }
+        .card-title { font-size: 1.15rem; font-weight: 700; color: var(--primary); line-height: 1.3; }
+        .card-desc { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+        .card-badge { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.72rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 999px; width: fit-content; }
+        .card-badge.teorico { background: rgba(37,99,235,0.1); color: var(--primary); }
+        .card-badge.a1 { background: rgba(245,158,11,0.15); color: #d97706; }
+        .card-badge.a2 { background: rgba(16,185,129,0.15); color: #059669; }
+        .info-section { background: var(--card-bg); border: 1px solid var(--border); border-radius: 1rem; padding: 2rem; box-shadow: var(--shadow); margin-bottom: 2rem; }
+        .info-section h2 { font-size: 1.2rem; font-weight: 700; color: var(--primary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+        .info-item { display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.9rem; }
+        .info-item .info-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 0.1rem; }
+        .info-item strong { font-weight: 600; }
+        .page-footer { text-align: center; padding: 1.5rem 2rem; font-size: 0.77rem; color: var(--text-muted); border-top: 1px solid var(--border); background: var(--sidebar-bg); }
+        @media (max-width: 768px) {
+            .header { padding: 1rem 1.25rem; flex-wrap: wrap; gap: 0.75rem; }
+            .main { padding: 2rem 1.25rem 3rem; }
+            .hero h1 { font-size: 1.6rem; }
+            .hero p { font-size: 0.95rem; }
+            .cards { grid-template-columns: 1fr; gap: 1rem; }
+            .card { padding: 1.5rem 1.25rem; }
+            .header-left .badge { display: none; }
+        }
+    </style>
+</head>
+<body>
+<header class="header">
+    <div class="header-left">
+        <span class="header-title">&#128218; EDAA · UniBH 2026/1</span>
+        <span class="badge">Estruturas de Dados</span>
+        <span class="badge badge-warn">Analise de Algoritmos</span>
+    </div>
+    <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn">&#127769; Modo Noturno</button>
+</header>
+<main class="main">
+    <div class="hero">
+        <h1>&#128218; Estruturas de Dados e Analise de Algoritmos</h1>
+        <p>Material de estudo completo para a disciplina EDAA — UniBH 2026/1. Selecione um dos materiais abaixo para iniciar.</p>
+    </div>
+    <div class="cards">
+        <a class="card" href="EDAA_material_teorico_estudo_gemini.html">
+            <div class="card-icon">&#128214;</div>
+            <span class="card-badge teorico">&#128216; Material Teorico</span>
+            <div class="card-title">Guia Teorico Completo</div>
+            <div class="card-desc">7 modulos cobrindo toda a ementa: Fundamentos Matematicos, Analise Assintotica, TAD e Estruturas Lineares, Arvores, Tabelas Hash, Grafos e Paradigmas de Projeto.</div>
+        </a>
+        <a class="card" href="EDAA_simulado01_A1_pilhas_filas.html">
+            <div class="card-icon">&#128221;</div>
+            <span class="card-badge a1">&#9997;&#65039; Simulado Discursivo</span>
+            <div class="card-title">Simulado A1 — Pilhas e Filas</div>
+            <div class="card-desc">10 questoes discursivas com enunciado detalhado e proposta de resolucao completa. Foco em Pilhas, Filas, Deque e estruturas lineares.</div>
+        </a>
+        <a class="card" href="EDAA_simulado02_A1_conteudo_completo.html">
+            <div class="card-icon">&#128221;</div>
+            <span class="card-badge a1">&#9997;&#65039; Simulado Discursivo</span>
+            <div class="card-title">Simulado A1 — Ementa Completa</div>
+            <div class="card-desc">10 questoes discursivas cobrindo modulos avancados: Matematica Computacional, Big-O, Arvores, Grafos, Hash e Paradigmas de Algoritmos.</div>
+        </a>
+        <a class="card" href="EDAA_simulado03_A2.html">
+            <div class="card-icon">&#127919;</div>
+            <span class="card-badge a2">&#9989; Simulado Objetiva</span>
+            <div class="card-title">Simulado A2 — Objetiva</div>
+            <div class="card-desc">7 questoes de multipla escolha com gabarito comentado. Foco em leitura de codigo, testes de mesa, armadilhas e pegadinhas classicas.</div>
+        </a>
+    </div>
+    <div class="info-section">
+        <h2>&#128203; Informacoes da Disciplina</h2>
+        <div class="info-grid">
+            <div class="info-item">
+                <span class="info-icon">&#127979;</span>
+                <div><strong>Instituicao:</strong> UniBH</div>
+            </div>
+            <div class="info-item">
+                <span class="info-icon">&#128197;</span>
+                <div><strong>Semestre:</strong> 2026/1</div>
+            </div>
+            <div class="info-item">
+                <span class="info-icon">&#9200;</span>
+                <div><strong>Carga Horaria:</strong> 160h</div>
+            </div>
+            <div class="info-item">
+                <span class="info-icon">&#128218;</span>
+                <div><strong>Disciplina:</strong> Estruturas de Dados e Analise de Algoritmos</div>
+            </div>
+        </div>
+    </div>
+    <div class="info-section">
+        <h2>&#128451;&#65039; Conteudo Programatico</h2>
+        <div class="info-grid">
+            <div class="info-item">
+                <span class="info-icon">&#129518;</span>
+                <div>Fundamentos Matematicos e Logicos</div>
+            </div>
+            <div class="info-item">
+                <span class="info-icon">&#9200;</span>
+                <div>Analise de Desempenho (Big-O)</div>
+            </div>
+            <div class="info-item">
+                <span class="info-icon">&#128230;</span>
+                <div>TAD e Estruturas Lineares</div>
+            </div>
+            <div class="info-item">
+                <span class="info-icon">&#128220;</span>
+                <div>Pilhas, Filas e Deque</div>
+            </div>
+            <div class="info-item">
+                <span class="info-icon">&#127795;</span>
+                <div>Arvores (BST, AVL, B-Tree, Heap)</div>
+            </div>
+            <div class="info-item">
+                <span class="info-icon">&#128273;</span>
+                <div>Tabelas Hash e Colisoes</div>
+            </div>
+            <div class="info-item">
+                <span class="info-icon">&#128376;&#65039;</span>
+                <div>Teoria dos Grafos (DFS, BFS, Dijkstra)</div>
+            </div>
+            <div class="info-item">
+                <span class="info-icon">&#129504;</span>
+                <div>Paradigmas de Projeto de Algoritmos</div>
+            </div>
+            <div class="info-item">
+                <span class="info-icon">&#128200;</span>
+                <div>Ordenacao (Merge Sort, Quick Sort)</div>
+            </div>
+            <div class="info-item">
+                <span class="info-icon">&#128300;</span>
+                <div>P vs NP e Complexidade Computacional</div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="page-footer">EDAA UniBH 2026/1 &middot; Sergio Pinton Pavanelli</footer>
+<script>
+    function toggleTheme() {
+        const html = document.documentElement;
+        const isDark = html.getAttribute('data-theme') === 'dark';
+        html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+        document.getElementById('theme-btn').textContent = isDark ? '\u{1F319} Modo Noturno' : '\u{2600}\u{FE0F} Modo Claro';
+        localStorage.setItem('theme-global', isDark ? 'light' : 'dark');
+    }
+    const savedTheme = localStorage.getItem('theme-global');
+    if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.getElementById('theme-btn').textContent = savedTheme === 'dark' ? '\u{2600}\u{FE0F} Modo Claro' : '\u{1F319} Modo Noturno';
+    }
+</script>
+</body>
+</html>
