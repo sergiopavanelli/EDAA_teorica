@@ -22,6 +22,8 @@
         .nav-container { flex: 1; overflow-y: auto; padding: 1rem; }
         .nav-group { margin-bottom: 0.5rem; }
         .nav-group-title { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; color: var(--text-muted); border-bottom: 1px solid var(--border); padding-bottom: 0.4rem; margin-bottom: 0.5rem; letter-spacing: 0.05em; }
+        a.nav-group-title { cursor: pointer; text-decoration: none; color: var(--text-muted); display: block; }
+        a.nav-group-title:hover { color: var(--primary); }
         .nav-item { display: flex; align-items: flex-start; padding: 0.6rem 0.75rem; border-radius: 0.5rem; cursor: pointer; font-size: 0.85rem; color: var(--text-main); margin-bottom: 0.15rem; transition: background 0.2s; border: 1px solid transparent; text-decoration: none; gap: 0.5rem; }
         .nav-item:hover { background: rgba(37,99,235,0.08); color: var(--primary); }
         .nav-item.active { background: var(--primary); color: white; font-weight: 600; border-color: var(--primary-dark); }
@@ -79,31 +81,31 @@
     </div>
     <div class="nav-container" id="nav-container">
         <div class="nav-group">
-            <div class="nav-group-title">Módulo 1: Fundamentos</div>
+            <a class="nav-group-title" href="#mod-1">Módulo 1: Fundamentos</a>
             <a class="nav-item" href="#sec-1" onclick="navClick(this)"><span class="nav-icon">&#129518;</span> Sistemas Numéricos</a>
             <a class="nav-item" href="#sec-2" onclick="navClick(this)"><span class="nav-icon">&#128268;</span> Lógica Booleana e Bitwise</a>
             <a class="nav-item" href="#sec-3" onclick="navClick(this)"><span class="nav-icon">&#128209;</span> Prova por Indução</a>
         </div>
         <div class="nav-group">
-            <div class="nav-group-title">Módulo 2: Análise de Desempenho</div>
+            <a class="nav-group-title" href="#mod-2">Módulo 2: Análise de Desempenho</a>
             <a class="nav-item" href="#sec-4" onclick="navClick(this)"><span class="nav-icon">&#9200;</span> Big-O, Omega, Theta</a>
             <a class="nav-item" href="#sec-5" onclick="navClick(this)"><span class="nav-icon">&#128200;</span> Classes de Complexidade</a>
             <a class="nav-item" href="#sec-6" onclick="navClick(this)"><span class="nav-icon">&#129504;</span> P vs NP</a>
         </div>
         <div class="nav-group">
-            <div class="nav-group-title">Módulo 3: TAD e Estruturas Lineares</div>
+            <a class="nav-group-title" href="#mod-3">Módulo 3: TAD e Estruturas Lineares</a>
             <a class="nav-item" href="#sec-7" onclick="navClick(this)"><span class="nav-icon">&#128230;</span> Arrays vs Listas Encadeadas</a>
             <a class="nav-item" href="#sec-8" onclick="navClick(this)"><span class="nav-icon">&#128220;</span> Pilhas (Stacks)</a>
             <a class="nav-item" href="#sec-9" onclick="navClick(this)"><span class="nav-icon">&#128203;</span> Filas (Queues)</a>
         </div>
         <div class="nav-group">
-            <div class="nav-group-title">Módulo 4: Estruturas Hierárquicas</div>
+            <a class="nav-group-title" href="#mod-4">Módulo 4: Estruturas Hierárquicas</a>
             <a class="nav-item" href="#sec-10" onclick="navClick(this)"><span class="nav-icon">&#127795;</span> Árvores Binárias de Busca</a>
             <a class="nav-item" href="#sec-11" onclick="navClick(this)"><span class="nav-icon">&#9878;&#65039;</span> Árvores Balanceadas (AVL/B)</a>
             <a class="nav-item" href="#sec-12" onclick="navClick(this)"><span class="nav-icon">&#128293;</span> Heaps</a>
         </div>
         <div class="nav-group">
-            <div class="nav-group-title">Módulos 5-7: Avançado</div>
+            <a class="nav-group-title" href="#mod-5">Módulos 5-7: Avançado</a>
             <a class="nav-item" href="#sec-13" onclick="navClick(this)"><span class="nav-icon">&#128273;</span> Tabelas Hash</a>
             <a class="nav-item" href="#sec-14" onclick="navClick(this)"><span class="nav-icon">&#128376;&#65039;</span> Teoria dos Grafos</a>
             <a class="nav-item" href="#sec-15" onclick="navClick(this)"><span class="nav-icon">&#129504;</span> Paradigmas de Projeto</a>
@@ -299,14 +301,14 @@ Usadas quando esbarramos na barreira dos problemas NP-Completos e não podemos e
     marked.setOptions({ breaks: true, gfm: true });
     function renderMarkdown(md) { return marked.parse(md); }
     document.getElementById('content').innerHTML = renderMarkdown(rawMd);
-    const sectionMap = { 'sec-1': 'Sistemas Num', 'sec-2': 'Lógica Booleana', 'sec-3': 'Prova por Indu', 'sec-4': 'Espectro Assin', 'sec-5': 'Classes de Complexidade', 'sec-6': 'P vs NP', 'sec-7': 'Arrays vs Lista', 'sec-8': 'Pilhas (Stack', 'sec-9': 'Filas (Queue', 'sec-10': 'Árvores Binárias de Busca', 'sec-11': 'Árvores Balanceadas', 'sec-12': 'Heaps', 'sec-13': 'Tabelas Hash', 'sec-14': 'Teoria dos Grafos', 'sec-15': 'Paradigmas de Projeto', 'sec-16': 'Sistema de Avalia' };
+    const sectionMap = { 'mod-1': 'Módulo 1:', 'mod-2': 'Módulo 2:', 'mod-3': 'Módulo 3:', 'mod-4': 'Módulo 4:', 'mod-5': 'Módulo 5:', 'sec-1': 'Sistemas Num', 'sec-2': 'Lógica Booleana', 'sec-3': 'Prova por Indu', 'sec-4': 'Espectro Assin', 'sec-5': 'Classes de Complexidade', 'sec-6': 'P vs NP', 'sec-7': 'Arrays vs Lista', 'sec-8': 'Pilhas (Stack', 'sec-9': 'Filas (Queue', 'sec-10': 'Árvores Binárias de Busca', 'sec-11': 'Árvores Balanceadas', 'sec-12': 'Heaps', 'sec-13': 'Tabelas Hash', 'sec-14': 'Teoria dos Grafos', 'sec-15': 'Paradigmas de Projeto', 'sec-16': 'Sistema de Avalia' };
     function assignIds() { const headings = document.querySelectorAll('.markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4'); headings.forEach(h => { const txt = h.textContent.trim(); for (const [id, keyword] of Object.entries(sectionMap)) { if (txt.includes(keyword) && !h.id) { h.id = id; break; } } }); }
     assignIds();
     function toggleTheme() { const html = document.documentElement; const isDark = html.getAttribute('data-theme') === 'dark'; html.setAttribute('data-theme', isDark ? 'light' : 'dark'); document.getElementById('theme-btn').textContent = isDark ? '\u{1F319} Modo Noturno' : '\u{2600}\u{FE0F} Modo Claro'; localStorage.setItem('theme-global', isDark ? 'light' : 'dark'); }
     const savedTheme = localStorage.getItem('theme-global'); if (savedTheme) { document.documentElement.setAttribute('data-theme', savedTheme); document.getElementById('theme-btn').textContent = savedTheme === 'dark' ? '\u{2600}\u{FE0F} Modo Claro' : '\u{1F319} Modo Noturno'; }
     function navClick(el) { document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active')); el.classList.add('active'); if (window.innerWidth <= 768) document.getElementById('sidebar').classList.remove('open'); }
     const mainEl = document.getElementById('main-content');
-    document.getElementById('nav-container').addEventListener('click', function(e) { var item = e.target.closest('.nav-item'); if (!item) return; e.preventDefault(); var id = item.getAttribute('href').slice(1); var target = document.getElementById(id); if (target) { var hh = document.querySelector('.header-bar').offsetHeight; mainEl.scrollTo({ top: target.offsetTop - hh, behavior: 'smooth' }); } });
+    document.getElementById('nav-container').addEventListener('click', function(e) { var item = e.target.closest('.nav-item, a.nav-group-title'); if (!item) return; e.preventDefault(); var id = item.getAttribute('href').slice(1); var target = document.getElementById(id); if (target) { var hh = document.querySelector('.header-bar').offsetHeight; mainEl.scrollTo({ top: target.offsetTop - hh, behavior: 'smooth' }); } });
     mainEl.addEventListener('scroll', () => { const scrollY = mainEl.scrollTop + 120; let currentId = null; Object.keys(sectionMap).forEach(id => { const el = document.getElementById(id); if (el && el.offsetTop <= scrollY) currentId = id; }); if (currentId) { document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active')); const activeLink = document.querySelector(`.nav-item[href="#${currentId}"]`); if (activeLink) activeLink.classList.add('active'); } document.getElementById('scroll-top').classList.toggle('visible', mainEl.scrollTop > 400); });
     function scrollToTop() { mainEl.scrollTo({ top: 0, behavior: 'smooth' }); }
     let searchTimeout;
