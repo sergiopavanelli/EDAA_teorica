@@ -1,6 +1,6 @@
 # UC: Estruturas de Dados e Análise de Algoritmos
 
-## Título: Prática nº 02B – Atividade – EDA2B_Lista – Análise de Complexidade
+## Título: Prática nº 02A – Atividade – EDA2A_Lista – Análise de Complexidade
 ## Data: 29/04/2026
 
 ## Integrantes:
